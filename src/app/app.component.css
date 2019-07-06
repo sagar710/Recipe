@@ -1,0 +1,23 @@
+.initialDiv {
+    margin: 10px;
+}
+
+.navbar-default {
+    background-color: #303F9F;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: white;
+}
+
+.navbar-default .navbar-nav > .active{
+    color: white;
+    background: #7986CB;
+}
+
+.navbar-default .navbar-nav > .active > a,
+.navbar-default .navbar-nav > .active > a:hover,
+.navbar-default .navbar-nav > .active > a:focus {
+    color: white;
+    background: #7986CB;
+}

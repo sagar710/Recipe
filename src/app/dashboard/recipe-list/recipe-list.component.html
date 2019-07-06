@@ -1,0 +1,86 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-10">
+            <h3 *ngIf="!recipeList.length; else recipesList"> 
+                <button class="btn btn-primary" (click)="fnAddNewRecipeRedirect()">Add</button>
+                some Recipes to begin...
+            </h3>
+
+            <ng-template #recipesList>
+                <!-- <div class="list-group" > -->
+                    <div *ngFor="let recipe of recipeList; let i = index">
+                        <!-- <div class="list-group-item clearfix"> -->
+                            <div class="mainCard">
+                                <div class="row">
+                                    <div>
+                                        <h2 class="recipeName">{{ recipe.name }}</h2>
+                                        
+                                    </div>
+                                    
+                                    <hr>
+                                    <div class="col-md-2">
+                                        <img src={{recipeImages[i]}} width="80" height="80" class="img-circle">
+                                    </div>    
+                                    <div class="col-md-10">
+                                        <h4 class="recipeDescription">{{ recipe.description }}</h4>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div class="row" >
+                                    <div *ngFor="let recipeIngredient of recipe.ingredients; 
+                                                let j=index">        
+                                        <div class="col-md-4">
+                                            <div class="ingredientsCard" [ngStyle]="{'background-color': recipe.colorAssigned[j] }" >
+                                                <h4 style="white-space: nowrap; 
+                                                overflow: hidden;
+                                                text-overflow: ellipsis;">
+                                                    {{ recipeIngredient }} 
+                                                </h4>
+                                            </div>
+                                            <br>
+                                            <!-- <h3> 
+                                                <span class="label label-{{recipe.colorAssigned[j]}}" 
+                                                style="word-wrap: break-word; white-space: initial"> 
+                                                    {{ recipeIngredient }} 
+                                                </span>
+                                            </h3> -->
+                                        </div>
+                                        
+                                    </div>
+                                </div>
+        
+                                <div class="row">
+                                    <div class="col-md-4">   
+                                        <h4 class="recipeMadeBy"> 
+                                            <img src="assets/images/ic_user.png" width="50" height="50">
+                                            <!-- <span class="glyphicon glyphicon-user pull-left"> </span> -->
+                                            <span style="display:inline-block; width: 10px;"></span>
+                                            {{ recipe.madeBy }}
+                                        </h4>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <h4 class="recipeTimeRequired" >
+                                            <img src="assets/images/ic_time_required.png" width="50" height="50">
+                                            <span style="display:inline-block; width: 10px;"></span>
+                                            {{ recipe.timeRequired }}
+                                        </h4>
+                                    </div>
+                                    <div class="col-md-4">
+                                    
+                                        <h4 class="servings">
+                                            <img src="assets/images/ic_servings.png" width="50" height="50">
+                                            <span style="display:inline-block; width: 10px;"></span>
+                                            {{ recipe.servings }}
+                                        </h4>
+                                    </div>
+                                </div>
+                            <!-- </div> -->
+                        </div>
+                        <br>
+                    <!-- </div> -->
+                </div>
+            </ng-template>
+        </div>
+    </div>
+</div>

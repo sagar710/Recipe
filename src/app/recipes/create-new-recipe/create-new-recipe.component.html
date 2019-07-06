@@ -1,0 +1,94 @@
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <label for="inputRecipeName">Create your own recipe...</label>
+            <br><hr>
+            <input
+                id="inputRecipeName" 
+                type="text"
+                class="form-control"
+                placeholder="Enter Recipe Name"
+                autocomplete="off"
+                #inputRecipeName />
+            <br>
+            <input
+                id="inputRecipeDescription" 
+                type="text"
+                class="form-control"
+                placeholder="Enter Recipe Description"
+                autocomplete="off"
+                #inputRecipeDescription />
+            <br>
+            <div class="row">
+                <div class="col-md-8">
+                    <input
+                    id="inputRecipeIngredients" 
+                    type="text"
+                    class="form-control"
+                    placeholder="Enter Recipe Ingredients"
+                    autocomplete="off"
+                    maxlength="50"
+                    #inputRecipeIngredients />
+                </div>
+                <div class="col-md-4">
+                    <button class="btn btn-warning" (click)="fnAddIngredient()">Add Ingredient</button>
+                </div>                
+            </div>
+
+            <br>
+            
+            <div class="row">
+                <div *ngFor="let ingredientChip of recipeIngredientsChips; let i=index">
+                    <div class="col-md-3">
+                        <div class="ingredientChip" [ngStyle]="{'background-color': colorAssignedToChips[ i ]}">
+                            {{ingredientChip}}
+                            <span class="ingredientCloseBtn" (click)="fnClearIngredient(i)">&times;</span>
+                        
+                        </div>
+                       <br>
+                       <br>
+                    </div>
+                </div>    
+            </div>
+            
+            <br>
+            <div class="row">
+                <div class="col-md-4">
+                    <input
+                        id="inputRecipeMadeBy" 
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Recipe Made By"
+                        autocomplete="off"
+                        maxlength="40"
+                        #inputRecipeMadeBy />
+                </div>
+                <div class="col-md-4">
+                    <input
+                        id="inputRecipeTimeRequired" 
+                        type="text"
+                        class="form-control"
+                        placeholder="Enter Time Required"
+                        autocomplete="off"
+                        maxlength="10"
+                        #inputRecipeTimeRequired />
+                </div>
+                <div class="col-md-4">
+                    <input
+                        id="inputRecipeServings" 
+                        type="number"
+                        class="form-control"
+                        placeholder="Enter Servings"
+                        autocomplete="off"
+                        maxlength="2"
+                        #inputRecipeServings />
+                </div>
+            </div>
+            <br><br>
+            <div class="text-center">
+                <button class="btn btn-primary" (click)="fnCreateNewRecipe()">Create Recipe</button>
+            </div>
+            
+        </div>
+    </div>
+</div>

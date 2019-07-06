@@ -1,0 +1,41 @@
+.container {
+  margin-top: 20px;
+}
+
+.headingBorder {
+  border: 2px;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: limegreen;
+  padding: 10px;
+  margin-top: 15px;
+}
+.headingTextSize {
+  font-weight: bold;
+  color: hotpink;
+  text-align: center;
+}
+
+.ingredientChip {
+  display: inline-block;
+  padding: 0 25px;
+  height: 100%;
+  font-size: 14px;
+  line-height: 30px;
+  border-radius: 20px;
+  white-space: initial;
+  word-wrap: break-word;
+}
+
+.ingredientCloseBtn {
+  padding-left: 10px;
+  color: #888;
+  font-weight: bold;
+  float: right;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.ingredientCloseBtn:hover {
+  color: #000;
+}

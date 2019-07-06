@@ -1,0 +1,13 @@
+.headingBorder {
+    border: 2px;
+    border-style: solid;
+    border-radius: 10px;
+    border-color: coral ;
+    padding: 10px;
+    margin-top: 15px;
+}
+.headingTextSize {
+    font-weight: bold;
+    color: cornflowerblue;
+    text-align: center;
+}
